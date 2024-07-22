@@ -89,7 +89,8 @@ To install the Main GUI application, follow these steps:
 ---
 
 ### Main view of the GUI
-    
+<a id="main-view"></a>
+
 ![Main view](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/main_view.png)
 
 - **Area 1**: represents the stream of video data, consisting of Frame ID and its timestamp
@@ -215,6 +216,6 @@ Common case:
 - It is usefull for model training and further analysis, but not restricted to it. 
 
 - The export can be performed by two ways:
-  1. Frame-by-Frame: exports all frames within the defined time range.
+  1. Frame-by-Frame: exports all frames within the defined time range (viz [Area 7](#main-view)).
 
   2. Segment representatives: viz [segment export](#segment-export)
