@@ -7,7 +7,7 @@ This is a main GUI of our system. It facilitates the user's interaction with var
 - Exports data, e.g., for model training, but not restricted to it
 - Loads / Plays / Pauses / Seeks data streams
 
-![IndoorPositioningSystem](https://github.com/Razyapoo/Thesis-Documentation/blob/main/Archive/Documentation/Images%20for%20wiki/main_window_gui.png)
+![IndoorPositioningSystem](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/main_window_gui.png)
 
 The application is built using the Qt 6.6.1 framework.
 
@@ -66,22 +66,22 @@ To install the Main GUI application, follow these steps:
 
 2. **Navigate to the "File" in the top menu:**
 
-    ![Select the folder with video and UWB data](https://github.com/Razyapoo/Thesis-Documentation/blob/main/Archive/Documentation/Images%20for%20wiki/options.png)
+    ![Select the folder with video and UWB data](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/options.png)
 
 - This will provide you with four different options:
-    - **"Open video and UWB data":** Select the folder with the video and UWB data as a single project / package, which corresponds to the Experiment folder that you want to analyze. The sample experiments are located at [Data for Indoor Positioning System (GUI)](https://github.com/Razyapoo/Master-Thesis/tree/main/Data%20for%20Indoor%20Positioning%20System%20(GUI)). 
+    - **"Open video and UWB data":** Select the folder with the video and UWB data as a single project / package, which corresponds to the Experiment folder that you want to analyze. The sample experiments are located at [Data for Indoor Positioning System (GUI)](https://github.com/Razyapoo/Master-Thesis/tree/master/Data%20for%20Indoor%20Positioning%20System%20(GUI)). 
 
-- For example, we can select [Train - Experiment 109](https://github.com/Razyapoo/Master-Thesis/tree/main/Data%20for%20Indoor%20Positioning%20System%20(GUI)/Train%20-%20Experiment%20109). In the following tutorial, this experiment will be used as an example.
+- For example, we can select [Train - Experiment 109](https://github.com/Razyapoo/Master-Thesis/tree/master/Data%20for%20Indoor%20Positioning%20System%20(GUI)/Train%20-%20Experiment%20109). In the following tutorial, this experiment will be used as an example.
 ---
 
 ### When video and UWB data are selected:
 
 - **Enter the anchors' positions:**
     
-    ![Input for anchors' positions](https://github.com/Razyapoo/Thesis-Documentation/blob/main/Archive/Documentation/Images%20for%20wiki/anchors_input.png)
+    ![Input for anchors' positions](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/anchors_input.png)
 
     - The GUI will require you to enter the anchors' positions
-    - These positions can be found in the description in [Data for Indoor Positioning System (GUI)](https://github.com/Razyapoo/Master-Thesis/tree/main/Data%20for%20Indoor%20Positioning%20System%20(GUI)).
+    - These positions can be found in the description in [Data for Indoor Positioning System (GUI)](https://github.com/Razyapoo/Master-Thesis/tree/master/Data%20for%20Indoor%20Positioning%20System%20(GUI)).
     - The GUI requires to set the **origin** anchor, which represents the origin of the UWB coordinate system. This allows to extend the UWB coordinate system to match the actual size of the environmental area.
     - It is possible to add as many anchors as you wish. 
     - It is **allowed to overwrite** an already existing anchor by writing its ID again with new coordinates.
@@ -90,7 +90,7 @@ To install the Main GUI application, follow these steps:
 
 ### Main view of the GUI
     
-![Main view](https://github.com/Razyapoo/Thesis-Documentation/blob/main/Archive/Documentation/Images%20for%20wiki/main_view.png)
+![Main view](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/main_view.png)
 
 - **Area 1**: represents the stream of video data, consisting of Frame ID and its timestamp
 - **Area 2**: represents the UWB data stream. Both Video and UWB streams are synchronized using the closest timestamps.
@@ -101,7 +101,7 @@ To install the Main GUI application, follow these steps:
 
 ### How to analyze UWB data (for its correction)
 
-![Main view](https://github.com/Razyapoo/Thesis-Documentation/blob/main/Archive/Documentation/Images%20for%20wiki/data_analysis.png)
+![Main view](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis.png)
 
 - Allows to correct the descripancies in UWB distance measurements
 - First, the time rage should be set
@@ -113,7 +113,7 @@ The main process of analysis:
     
 1. Set the time range of interest, then press 
 
-![Time range](https://github.com/Razyapoo/Thesis-Documentation/blob/main/Archive/Documentation/Images%20for%20wiki/data_analysis_window.png)
+![Time range](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis_window.png)
 
 2. Select a tag and an anchor pair
 
@@ -121,33 +121,33 @@ Common case:
 
 - Tag
 
-![Tag selection](https://github.com/Razyapoo/Thesis-Documentation/blob/main/Archive/Documentation/Images%20for%20wiki/data_analysis_tag_selection.png)
+![Tag selection](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis_tag_selection.png)
 
 - Anchor
 
-![Anchor selection](https://github.com/Razyapoo/Thesis-Documentation/blob/main/Archive/Documentation/Images%20for%20wiki/data_analysis_anchor_selection.png)
+![Anchor selection](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis_anchor_selection.png)
 
 **NOTE:** in the current example, there will be only 1 tag and 2 anchors to choose from
 
 - Tag
 
-![Tag selection E109](https://github.com/Razyapoo/Thesis-Documentation/blob/main/Archive/Documentation/Images%20for%20wiki/data_analysis_tag_selection_e109.png)
+![Tag selection E109](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis_tag_selection_e109.png)
 
 - Anchor
 
-![Anchor selection E109](https://github.com/Razyapoo/Thesis-Documentation/blob/main/Archive/Documentation/Images%20for%20wiki/data_analysis_anchor_selection_e109.png)
+![Anchor selection E109](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis_anchor_selection_e109.png)
 
 3. Split the dataset using rolling window (for standard rolling deviation)
 
-![STD Rolling deviation](https://github.com/Razyapoo/Thesis-Documentation/blob/main/Archive/Documentation/Images%20for%20wiki/data_analysis_rolling_window.png)
+![STD Rolling deviation](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis_rolling_window.png)
 
 4. Set a threshold to identify **standing periods**
 
-![Threshold](https://github.com/Razyapoo/Thesis-Documentation/blob/main/Archive/Documentation/Images%20for%20wiki/data_analysis_threshold.png)
+![Threshold](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis_threshold.png)
 
 5. Assign each period with corresponding Ground Truth distance
 
-![GT mapping](https://github.com/Razyapoo/Thesis-Documentation/blob/main/Archive/Documentation/Images%20for%20wiki/data_analysis_reference_values.png)
+![GT mapping](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis_reference_values.png)
    
    - Ground Truth values are used to train polynomial regression function
    - There are two possibilities to enter the Ground Truth values:
@@ -157,11 +157,13 @@ Common case:
 
 6. Calculate the polynomial regression to correct distance measurements for the entire range of tag-anchor pair
 
-![Polynomial regression](https://github.com/Razyapoo/Thesis-Documentation/blob/main/Archive/Documentation/Images%20for%20wiki/data_analysis_calculate_polyn_regres.png)
+![Polynomial regression](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis_calculate_polyn_regres.png)
 
-7. Update UWB distances with corrected ones and export them for model training 
-<a id="segment-export"/>
-![Segment representatives export](https://github.com/Razyapoo/Thesis-Documentation/blob/main/Archive/Documentation/Images%20for%20wiki/data_analysis_export.png)
+
+7. Update UWB distances with corrected ones and export them for model training{#segment-export}
+<a id="segment-export"></a>
+
+![Segment representatives export](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis_export.png)
 
    - (1.) Update (adjust) UWB measuremtns "on-the-go" with correct ones using trained polynomial function. Subsequently, it will correct the UWB coordinates.
    - (2.) Export segments' (standing periods) representatives for the selected tag-anchor pair. 
@@ -196,4 +198,4 @@ Common case:
 - The export can be performed by two ways:
   1. Frame-by-Frame: exports all frames within the defined time range.
 
-  2. Segment representatives: viz [segment export](segment-export)
+  2. Segment representatives: viz [segment export](#segment-export)\
