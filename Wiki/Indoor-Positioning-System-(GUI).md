@@ -218,4 +218,4 @@ Common case:
 - The export can be performed by two ways:
   1. Frame-by-Frame: exports all frames within the defined time range (viz [Area 7](#main-view)).
 
-  2. Segment representatives: viz [segment export](#segment-export)
+  2. Segment representatives: export only segment representatives (viz [segment export](#segment-export)).
