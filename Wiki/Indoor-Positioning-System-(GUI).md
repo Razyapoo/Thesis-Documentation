@@ -95,9 +95,23 @@ To install the Main GUI application, follow these steps:
 - **Area 1**: represents the stream of video data, consisting of Frame ID and its timestamp
 - **Area 2**: represents the UWB data stream. Both Video and UWB streams are synchronized using the closest timestamps.
 - **Area 3**: dedicated to the UWB data. It allows for correcting the data by analyzing them and showing the estimated UWB coordinates.
-- **Area 4**: intended to run Pixel-to-Real and Optical methods and show their results.
-- **Area 5**: responsible for exporting the data. Note that this export process is very time-consuming. There is another option to export the data, which can be performed in the Data Analysis window.
+- **Area 4**: allows to navigate through the video; seek frame
+- **Area 5**: play / pause data stream
+- **Area 6**: intended to run Pixel-to-Real and Optical methods and show their results.
+- **Area 7**: responsible for exporting the data. Note that this export process is very time-consuming. There is another option to export the data, which can be performed in the Data Analysis window.
 ---
+
+### Show UWB coordinates
+
+- Coordinate window is shown automatically, once video and UWB data are loaded
+
+![UWB coordinates window](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/uwb_coordinates_window.png)
+
+- Top-down view (Localization schema)
+
+![UWB localization schema](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/uwb_localization_schema.png)
+
+   - Schema allows to **hover the mouse over the shapes** to see their coordinates!
 
 ### How to analyze UWB data (for its correction)
 
@@ -127,7 +141,7 @@ Common case:
 
 ![Anchor selection](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis_anchor_selection.png)
 
-**NOTE:** in the current example, there will be only 1 tag and 2 anchors to choose from
+**NOTE:** In the current example, there will be only 1 tag and 2 anchors to choose from. In general, there can be more tags and anchors to choose from.
 
 - Tag
 
@@ -140,6 +154,11 @@ Common case:
 3. Split the dataset using rolling window (for standard rolling deviation)
 
 ![STD Rolling deviation](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis_rolling_window.png)
+
+**NOTE:** Diagrams are interactive. Use the following shortcuts:
+   - ctrl + left mouse + "mouse move" - allows to pan a diagram view
+   - ctrl + mouse wheel - allows to zoom in / out a diagram
+   - hovering the mouse over the lines: shows timestamp (in hour:min:sec for better analysis) + UWB measurement recorded at that time  
 
 4. Set a threshold to identify **standing periods**
 
@@ -160,7 +179,7 @@ Common case:
 ![Polynomial regression](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis_calculate_polyn_regres.png)
 
 
-7. Update UWB distances with corrected ones and export them for model training{#segment-export}
+7. Update UWB distances with corrected ones and export them for model training
 <a id="segment-export"></a>
 
 ![Segment representatives export](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis_export.png)
@@ -180,15 +199,15 @@ Common case:
 - **"Load camera intrinsic params":** Select the folder with the intrinsic parameters for the camera. 
 - **"Load human detection model weights":** Select the folder with the weights (both .weights and .cfg together as a single package) for the human detection model. 
 
+**NOTE:** "Load human detection model weights" can be loaded only from "File" in the top menu. For safety reasons.
+
 2. Directly by running the methods. It will show pop-up window and require to load configuration files.
 
+![Run P2R and Opt methods](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/run_opt_p2r_methods.png)
 
+   - this will to start people detection and show dedicated windows with coordinates for each method
 
-### Show coordinates estimated by each method
-
-- Coordinate windows
-
-- Top-down view (Localization schema)
+    ![Run P2R and Opt methods result](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/rum_methods_result.png)
 
 ### Export coordinates
 
@@ -198,4 +217,4 @@ Common case:
 - The export can be performed by two ways:
   1. Frame-by-Frame: exports all frames within the defined time range.
 
-  2. Segment representatives: viz [segment export](#segment-export)\
+  2. Segment representatives: viz [segment export](#segment-export)
