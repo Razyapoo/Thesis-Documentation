@@ -207,7 +207,7 @@ Common case:
 
    - this will to start people detection and show dedicated windows with coordinates for each method
 
-    ![Run P2R and Opt methods result](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/rum_methods_result.png)
+    ![Run P2R and Opt methods result](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/run_methods_result.png)
 
 ### Export coordinates
 
