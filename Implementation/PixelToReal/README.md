@@ -8,21 +8,40 @@ Contains the code for training the Pixel-to-Real model.
         { Frame ID } { UWB X Coordinate } { UWB Y Coordinate } { Pixel x Coordinate } { Pixel y Coordinate } 
         ```
     - note: Pixel means real pixel in image, not PixelToReal model
+
 - `PixeltoReal_model_to_be_used_in_GUI.json` - prepared (trained) Pixel-to-Real model to use in Indoor Positioning System (GUI)
 
 **Requirements**:
-- eXtream Gradient Boost:
-    ``` 
-    git clone --recursive https://github.com/dmlc/xgboost
-    cd xgboost
-    mkdir build
-    cd build
-    cmake ..
-    cmake --build .
-    mv include/xgboost /usr/local/include/
-    mv lib/libxgboost.so /usr/local/lib/
-    ```
+- eXtream Gradient Boost
+- python
 
+## Installation
+
+To install the XGBoost, follow these steps:
+
+``` 
+git clone https://github.com/dmlc/xgboost.git
+cd xgboost
+mkdir build
+cd build
+cmake ..
+cmake --build .
+# mv include/xgboost /usr/local/include/
+# mv lib/libxgboost.so /usr/local/lib/
+```
+
+## Usage
+
+Use python to compile the `train_PixeltoReal_model.py`:
+
+```
+python3 train_PixeltoReal_model.py
+```
+
+It takes the pairs of pixel and UWB coordinates exported from Indoor Positioning System (GUI) and trains the model:
+
+- Input: `data_to_train_model_experiment_109.txt`
+- Output: `PixeltoReal_model_to_be_used_in_GUI.json`
 
 ## Structure
 ```

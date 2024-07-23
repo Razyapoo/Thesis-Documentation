@@ -1,19 +1,14 @@
 # Server (Centralized)
 
- Initiates simultaneous work of:
-- Video Manager
-- (UWB) Server
-- Activity watchdog separately
+**Responsibilities:**
+- *Video processing*: handles video recording
+- *Server*: communicates with tags and collects distance measurements from them
+- *Activity watchdog*: monitors tag responses and detects if communication between anchor and tag is blocked
 
-Each work is initiated in a dedicated thread for better optimization
+Each work is initiated simultaneously in a dedicated thread for better optimization
 
 **!!! IMPORTANT !!!**
 - These data are not yet synchornized; synchronization is performed later in Indoor Positioning System (GUI)
-
-**Responsibilities:**
-     - *Video processing*: handles video recording
-     - *Server*: communicates with tags and collects distance measurements from them
-     - *Activity watchdog*: monitors tag responses and detects if communication between anchor and tag is blocked
 
 **Output:**
 - Separatelly: 

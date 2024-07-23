@@ -16,7 +16,7 @@ These parameters are used to calculate people coordinates using Optical method a
 - The implementation includes functions to detect the corners of the chessboard, compute the intrinsic parameters, and save the calibration results.
 
 **Requarnments**:
-- [OpenCV v4.7.0](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html)
+- OpenCV v4.7.0
 
 ## Structure
 ```
