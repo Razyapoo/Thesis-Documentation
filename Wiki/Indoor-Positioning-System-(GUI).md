@@ -2,8 +2,8 @@
 
 This is a main GUI of our system. It facilitates the user's interaction with various features and functionalities, as follows:
 
-- Aligns (synchronizes) and visualizes video and UWB data recorded by [Server](/Implementation/Server/Server.h)
-- Allows to use the Pixel-To-Real model (load model) and Optical method (load camera intrinsic parameters) for people localization
+- Aligns (synchronizes) and visualizes video and UWB data streams recorded by [Server](/Implementation/Server/Server.h)
+- Allows to use the Pixel-To-Real and Optical methods for people localization
 - Exports data, e.g., for model training, but not restricted to it
 - Loads / Plays / Pauses / Seeks data streams
 
