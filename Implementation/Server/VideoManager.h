@@ -16,8 +16,8 @@
 #include <opencv2/dnn.hpp>
 #include <thread>
 
-#include "Camera.hpp"
-#include "SharedData.hpp"
+#include "Camera.h"
+#include "SharedData.h"
 
 class VideoManager
 {

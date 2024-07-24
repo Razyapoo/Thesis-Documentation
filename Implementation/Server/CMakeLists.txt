@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 
 
-add_executable(Server Server_Multithreaded.cpp VideoManager.cpp StereoCamera.cpp Server.cpp)
+add_executable(Server Server_Multithreaded.cpp VideoManager.cpp Camera.cpp Server.cpp)
 
 # Link against OpenCV
 target_link_libraries(Server ${OpenCV_LIBS})
