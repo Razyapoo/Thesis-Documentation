@@ -6,5 +6,5 @@ Welcome to the project's documentation. This wiki contains information and manua
 
 - [Indoor Positioning System (GUI)](Indoor-Positioning-System-(GUI).md)
 - [Camera Intrinsic Calibration](Camera-Intrinsic-Calibration.md)
-- [Server](Multithreaded-Server.md)
+- [Server for data acquisition](Multithreaded-Server.md)
 - [PixelToReal model (xGBoost)](xGBoost-Training.md)

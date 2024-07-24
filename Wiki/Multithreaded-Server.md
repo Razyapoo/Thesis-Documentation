@@ -1,13 +1,14 @@
 ## Overview
 
-This is a Server which allows to collect video and UWB data. 
+This is a Server, which simulates real CCTV camera system and allows to collect video and UWB data. 
 
 **Responsibilities:**
 - *Video processing*: handles video recording
-- *Server*: communicates with tags and collects distance measurements from them
+- *Server for UWB*: communicates with UWB tags and collects distance measurements from them
 - *Activity watchdog*: monitors tag responses and detects if communication between anchor and tag is blocked
+- It is podsible to Pause / Continue / Stop recording of data streams
 
-Each work is initiated simultaneously in a dedicated thread for better optimization
+Each work is performed simultaneously in a dedicated thread for better optimization
 
 **!!! IMPORTANT !!!**
 - These data are not yet synchornized; synchronization is performed later in Indoor Positioning System (GUI)
@@ -15,8 +16,11 @@ Each work is initiated simultaneously in a dedicated thread for better optimizat
 **Output:**
 - Separatelly: 
     - `video.avi`
+      - video recording
     - `video_timestamps.txt`
+      - index file for lookup in video
     - `UWB_timestamps.txt`
+      - UWB measurements together with their timestamps
 
 ## Requirements
 
@@ -28,7 +32,7 @@ Each work is initiated simultaneously in a dedicated thread for better optimizat
 
 To install the Server, follow these steps:
 
-1. **Install the required dependencies (if not yet installed):**
+1. **Install the OpenCV library (if not yet installed):**
 ```
 git clone https://github.com/opencv/opencv.git
 git clone https://github.com/opencv/opencv_contrib.git
@@ -59,10 +63,24 @@ cmake ..
 make
 ```
 
-3. **Run the Server:**
+## Usage
+
+### Server initialization 
+
+1. **Run the Server:**
 
 ```
 ./Server # assuming we are in the build folder
 ```
 
-4. 
+- This will automatically start the UWB server to listen for incoming requests from UWB tags.
+- It will also start video recording
+
+### Pause / continue / stop recording
+
+The management of the recording can be performed by usimg keyboard as follows:
+
+- 
+
+
+2. 
