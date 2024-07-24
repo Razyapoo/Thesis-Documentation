@@ -1,6 +1,6 @@
 ## Overview
 
-This is a Server, which simulates real CCTV camera system and allows to collect video and UWB data. 
+The Server simulates a real CCTV camera system and allows to collect video and UWB data. 
 
 **Responsibilities:**
 - *Video processing*: handles video recording
@@ -10,8 +10,8 @@ This is a Server, which simulates real CCTV camera system and allows to collect 
 
 Each work is performed simultaneously in a dedicated thread for better optimization
 
-**!!! IMPORTANT !!!**
-- These data are not yet synchornized; synchronization is performed later in Indoor Positioning System (GUI)
+> [!Warning]
+> These data are not yet synchornized; synchronization is performed later in Indoor Positioning System (GUI)
 
 **Output:**
 - Separatelly: 
