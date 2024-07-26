@@ -26,7 +26,7 @@ Installation process is detailed bellow.
 
 ## Installation
 
-To install the Main GUI application either use the `[install.sh](/Implementation/install.sh)` to automatically install all the requirement dependencies, or follow these steps:
+To install the Main GUI application either use the `[install.sh](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Implementation/install.sh)` to automatically install all the requirement dependencies, or follow these steps:
 
 1. **Install the required dependencies:**
    - Create a temporary folder where all dependencies will be installed:
