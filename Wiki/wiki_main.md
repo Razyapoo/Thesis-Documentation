@@ -1,6 +1,6 @@
 #  	Smart extensions to regular cameras in the industrial environment
 
-Welcome to the project's documentation. This wiki contains information and manuals for the various components of our project. Use the links below to navigate to the specific documentation for each application.
+Welcome to the project's documentation. This wiki contains information and manuals for the various components of our project. Use the links below to navigate to the specific documentation for each component.
 
 ## Applications
 

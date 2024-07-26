@@ -1,11 +1,12 @@
 ## Overview
 
-This is a main GUI of our system. It facilitates the user's interaction with various features and functionalities, as follows:
+This is a main GUI of our system. It solely serves as a tool, which enables to work offline with the collected data. It facilitates the user's interaction with our developed system, allowing for:
 
-- Aligns (synchronizes) and visualizes video and UWB data streams recorded by [Server](/Implementation/Server/Server.h)
-- Allows to use the Pixel-To-Real and Optical methods for people localization
-- Exports data, e.g., for model training, but not restricted to it
-- Loads / Plays / Pauses / Seeks data streams
+- Aligning (synchronizing) and visualizing video and UWB data streams recorded by [Server](/Implementation/Server/Server.h)
+- Using the Pixel-To-Real and Optical methods for people localization
+- Performing data analysis
+- Exporting the data, e.g., for model training, but not restricted to it
+- Loading / Playing / Pausing / Seeking the data streams
 
 ![IndoorPositioningSystem](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/main_window_gui.png)
 
