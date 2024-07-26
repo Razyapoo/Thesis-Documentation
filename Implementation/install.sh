@@ -59,12 +59,12 @@ chmod +x qt_installer_expect.sh
 sudo ./qt_installer_expect.sh
 QT_INSTALL_PATH=/opt/Qt
 sudo mkdir -p $QT_INSTALL_PATH
-sudo mv ~/Qt/* $QT_INSTALL_PATH
+sudo mv $PATH_PROJECT/Qt/* $QT_INSTALL_PATH
 echo "Qt was installed to $QT_INSTALL_PATH"
 
 # Remove the expect script
 rm qt_installer_expect.sh
-rm qt-installer.run
+rm qt-unified-linux-x64-online.run
 
 # Update and install basic dependencies
 sudo apt-get update
@@ -85,7 +85,7 @@ cmake --build .
 cd ../..
 XGBOOST_INSTALL_PATH=/opt/xgboost
 sudo mkdir -p $XGBOOST_INSTALL_PATH
-sudo mv xgboost/* $XGBOOST_INSTALL_PATH
+sudo mv $PATH_PROJECT/xgboost/* $XGBOOST_INSTALL_PATH
 echo "XGBoost was installed to $XGBOOST_INSTALL_PATH"
 
 # Install OpenCV
@@ -101,7 +101,9 @@ sudo make install
 sudo ldconfig
 cd ..
 rm -rf opencv-4.x opencv_contrib-4.x opencv.zip opencv_contrib.zip
-OPENCV_INSTALL_PATH=$PATH_PROJECT/opencv4
+OPENCV_INSTALL_PATH=/opt/opencv4
+sudo mkdir -p $OPENCV_INSTALL_PATH
+sudo mv $PATH_PROJECT/opencv4/* $OPENCV_INSTALL_PATH
 echo "OpenCV was installed to $OPENCV_INSTALL_PATH"
 
 # Download YoloV4 configuration files
@@ -110,10 +112,6 @@ wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/y
 wget https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov4-tiny.cfg
 
 # Set environment variables in shell configuration
-SHELL_CONFIG="$HOME/.bashrc"
-if [ -n "$ZSH_VERSION" ]; then
-  SHELL_CONFIG="$HOME/.zshrc"
-fi
 
 {
   echo "# Qt"
@@ -129,7 +127,9 @@ fi
   echo "export LD_LIBRARY_PATH=\$OPENCV_LIB_PATH:\$XGBOOST_LIB_PATH:\$LD_LIBRARY_PATH"
   echo "export CPATH=\$OPENCV_INCLUDE_PATH:\$XGBOOST_INCLUDE_PATH:\$CPATH"
   echo "export LIBRARY_PATH=\$OPENCV_LIB_PATH:\$XGBOOST_LIB_PATH:\$LIBRARY_PATH"
-} >> $SHELL_CONFIG
+} >> $HOME/.bashrc
+
+source $HOME/.bashrc
 
 # Clean up temporary folders
 rm -rf $PATH_PROJECT/xgboost/build
@@ -137,4 +137,3 @@ rm -rf $PATH_PROJECT/opencv-4.x
 rm -rf $PATH_PROJECT/opencv_contrib-4.x
 
 echo "Installation completed successfully!"
-echo "Please restart your terminal or run 'source $SHELL_CONFIG' to apply the changes."

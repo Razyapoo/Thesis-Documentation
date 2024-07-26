@@ -9,6 +9,7 @@ This is a Main GUI, which allows to:
 **Requarnments**:
 - Linux operating system
     - tested on Ubuntu 22.04 LTS
+    - Monitor resolution: 1920x1080 or more.
 - [eXtream Gradient Boost](https://github.com/dmlc/xgboost)
 - [OpenCV v4.7.0](https://opencv.org/)
 - [Qt6 Framework v6.6.1](https://www.qt.io/product/framework)
