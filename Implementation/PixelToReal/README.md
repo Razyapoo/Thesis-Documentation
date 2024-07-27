@@ -2,6 +2,7 @@
 
 Contains the code for training the Pixel-to-Real model.
 
+**Input for model training:**
 - `data_to_train_model_experiment_109.txt` - export of synchronized (aligned) pairs consisting of UWB coordinates and pixel coordinates; export from Indoor Positioning System (GUI)
     - File schema:
         ```
@@ -9,11 +10,13 @@ Contains the code for training the Pixel-to-Real model.
         ```
     - Note: Pixel means real pixel in image, not PixelToReal model
 
-- `PixeltoReal_model_to_be_used_in_GUI.json` - prepared (trained) Pixel-to-Real model to use in Indoor Positioning System (GUI)
+**Output:**
+
+- `PixeltoReal_model_to_be_used_in_GUI.json` - prepared (trained) Pixel-to-Real model to use in Indoor Positioning System (GUI). **JSON format**!!!
 
 **Requirements**:
-- eXtream Gradient Boost
-- python 3.8 or newer
+   - eXtream Gradient Boost
+   - python 3.8 or newer
 
 ## Installation 
 

@@ -37,9 +37,9 @@ Installation process is detailed in the [folder](/Implementation/Server/) contat
 
 The management of the recording can be performed by using keyboard keys as follows:
 
-- p: pause recording
-- c: continue recording
-- s: stop and save recording
+- `p`: pause recording
+- `c`: continue recording
+- `s`: stop and save recording
 
 > [!Warning]
 > These keys are pinned to video stram window (cv::imshow). Therefore, the keys should only be pressed when video recording window is active. 

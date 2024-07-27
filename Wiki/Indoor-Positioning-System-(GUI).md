@@ -23,12 +23,12 @@ Installation process is detailed in the [folder](/Implementation/IndoorPositioni
 1. **Open the Indoor Positioning System application:**
    - Run the executable `./IndoorPositioningSystem` in the `build/` folder.
 
-2. **Navigate to the "File" in the top menu:**
+2. **Navigate to the `File` in the top menu:**
 
     ![Select the folder with video and UWB data](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/options.png)
 
-- This will provide you with four different options:
-   - **"Open video and UWB data":** Select the folder with the video and UWB data as a single project / package from [Data for Indoor Positioning System (GUI)](https://github.com/Razyapoo/Master-Thesis/tree/master/Data%20for%20Indoor%20Positioning%20System%20(GUI)). 
+- This will provide you with four different options. As for now we are interested in:
+   - `Open video and UWB data`: Select the folder with the video and UWB data as a single project / package from [Data for Indoor Positioning System (GUI)](https://github.com/Razyapoo/Master-Thesis/tree/master/Data%20for%20Indoor%20Positioning%20System%20(GUI)). 
       - For example, select [Train - Experiment 109](https://github.com/Razyapoo/Master-Thesis/tree/master/Data%20for%20Indoor%20Positioning%20System%20(GUI)/Train%20-%20Experiment%20109). In the rest of this tutorial, this experiment will be used as an example.   
    - Other options are not mandatory as for now. They will be detailed later in this tutorial.
 
@@ -47,7 +47,7 @@ Installation process is detailed in the [folder](/Implementation/IndoorPositioni
       - This allows to extend the UWB coordinate system to match the actual size of the environmental area.
     - It is possible to add as many anchors as you wish. 
     - It is **allowed to overwrite** an already existing anchor by writing its ID again with new coordinates.
-    - Once all positions of anchors are entered, close the input window by pressing "**Finish adding**". 
+    - Once all positions of anchors are entered, close the input window by pressing `Finish adding`. 
       - After this the GUI will start playing the data stream.
 
 
@@ -91,7 +91,7 @@ Installation process is detailed in the [folder](/Implementation/IndoorPositioni
 
 The main process of analysis:
     
-1. Set the time range of interest, then press "Set Time Range" button.
+1. Set the time range of interest, then press `Set Time Range` button.
 
 ![Time range](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis_window.png)
 
@@ -124,15 +124,15 @@ This is how the choice will looks like in the common case:
 ![STD Rolling deviation](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis_rolling_window.png)
 
 **NOTE:** Diagrams are interactive. Use the following combinations:
-   - **ctrl + left mouse + "mouse move"**: allows to pan a diagram view
-   - **ctrl + mouse wheel**: allows to zoom in / out a diagram
-   - **hovering the mouse over the lines**: shows timestamp (in hour:min:sec for better analysis) + UWB measurement recorded at that time  
+   - `ctrl + left mouse + "mouse move"`: allows to pan a diagram view
+   - `ctrl + mouse wheel`: allows to zoom in / out a diagram
+   - `hovering the mouse over the lines`: shows timestamp (in hour:min:sec for better analysis) + UWB measurement recorded at that time  
 
 4. Set a threshold to split the dataset into standing periods
 
 ![Threshold](https://github.com/Razyapoo/Thesis-Documentation/blob/master/Archive/Documentation/Images%20for%20wiki/data_analysis_threshold.png)
    
-   - When "Calculate" is pressed, the mean values (segment / period representatives) are calculated for each standing period.
+   - When `Calculate` is pressed, the mean values (segment / period representatives) are calculated for each standing period.
 
 5. Assign each period with corresponding Ground Truth distance
 
@@ -164,12 +164,12 @@ This is how the choice will looks like in the common case:
 
 - These methods require additional configuration files to run. These files could be loaded either:
 
-1. Using the "File" in the top menu:
-- **"Load pixel to real model params":** Select the folder with the parameters for the Pixel-To-Real model (.json file).
-- **"Load camera intrinsic params":** Select the folder with the intrinsic parameters for the camera (.xml file). 
-- **"Load human detection model weights":** Select the folder with the weights (both .weights and .cfg together as a single package) for the YOLOv4 people detection model. 
+1. Go to the `File` in the top menu:
+- `Load pixel to real model params`: Select the folder with the parameters for the Pixel-To-Real model (.json file).
+- `Load camera intrinsic params`: Select the folder with the intrinsic parameters for the camera (.xml file). 
+- `Load human detection model weights`: Select the folder with the weights (both .weights and .cfg together as a single package) for the YOLOv4 people detection model. 
 
-**NOTE:** "Load human detection model weights" can be loaded only from "File" in the top menu for safety reasons.
+**NOTE:** The model weights can be loaded only from `File` in the top menu for safety reasons.
 
 2. Directly by running the methods (pressing buttons). It will show pop-up window and require to load configuration files.
 
