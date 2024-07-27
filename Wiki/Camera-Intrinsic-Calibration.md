@@ -29,7 +29,7 @@ Chessboard pattern can be found in the official OpenCV [repository](https://gith
   ```
 
   **Options**
-  - `--input_camera{id}`: the linux identifier of the camera to use (*video{id}*), which can be found under the `/dev` directory (default: 2)
+  - `--input_camera{id}`: the linux identifier of the camera to use (*video{id}*), which can be found under the `/dev` directory (default: `2`)
   - `--intrinsic_file_path`: the path where to save resulting cailbration parameters (defualt: `parameters/intrinsic_parameters.xml`)
 
   > [!Warning]
