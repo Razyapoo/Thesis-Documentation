@@ -1,55 +1,24 @@
 ## Overview
 
-This is a Server which allows to collect video and UWB data. 
+Training of the Pixel-to-Real model.
 
-**Responsibilities:**
-- *Video processing*: handles video recording
-- *Server*: communicates with tags and collects distance measurements from them
-- *Activity watchdog*: monitors tag responses and detects if communication between anchor and tag is blocked
+**Input:**
 
-Each work is initiated simultaneously in a dedicated thread for better optimization
+  - `data_to_train_model_experiment_109.txt` - export of synchronized (aligned) pairs consisting of UWB coordinates and pixel coordinates; export from Indoor Positioning System (GUI)
+      - File schema:
+          ```
+          { Frame ID } { UWB X Coordinate } { UWB Y Coordinate } { Pixel x Coordinate } { Pixel y Coordinate } 
+          ```
+      - Note: Pixel means real pixel in image, not PixelToReal model
 
-**!!! IMPORTANT !!!**
-- These data are not yet synchornized; synchronization is performed later in Indoor Positioning System (GUI)
+**Output**
 
-**Output:**
-- Separatelly: 
-    - `video.avi`
-    - `video_timestamps.txt`
-    - `UWB_timestamps.txt`
-
-## Requirements
-
-- **Linux operating system**
-  - Tested on Ubuntu 22.04.4 LTS
-- **OpenCV v4.7.0**
-
-## Installation 
-> [!NOTE]   
-> Same steps as written in the README.md in the PixelToReal folder
-
-To install the XGBoost, follow these steps:
-
-``` 
-git clone https://github.com/dmlc/xgboost.git
-cd xgboost
-mkdir build
-cd build
-cmake ..
-cmake --build .
-# mv include/xgboost /usr/local/include/
-# mv lib/libxgboost.so /usr/local/lib/
-```
+  - `PixeltoReal_model_to_be_used_in_GUI.json` - prepared (trained) Pixel-to-Real model to use in Indoor Positioning System (GUI)
 
 ## Usage
 
 Use python to compile the `train_PixeltoReal_model.py`:
 
+```sh
+python train_PixeltoReal_model.py
 ```
-python3 train_PixeltoReal_model.py
-```
-
-It takes the pairs of pixel and UWB coordinates exported from Indoor Positioning System (GUI) and trains the model:
-
-- Input: `data_to_train_model_experiment_109.txt`
-- Output: `PixeltoReal_model_to_be_used_in_GUI.json`

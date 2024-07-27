@@ -2,7 +2,7 @@
 
 Contains:
 - `Data for evaluation`
-    - Export of data from GUI for UWB, Pixel-to-Real and Optical methods
+    - Export of the data from GUI for UWB, Pixel-to-Real and Optical methods
     - Prepared for evaluation
 
 - `Relusts of evaluation (Plots, Statistics)`
