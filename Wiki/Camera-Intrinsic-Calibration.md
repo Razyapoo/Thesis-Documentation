@@ -49,7 +49,7 @@ Chessboard pattern can be found in the official OpenCV [repository](https://gith
   - `x`: exit the calibration
 
 
-  If you are in the IDLE stage and want to start detecting the chessboard corners, please press "n".
+  If you are in the IDLE stage and want to start detecting the chessboard corners, please press `n`.
 
 ### Detection of corners
 
@@ -59,9 +59,9 @@ Chessboard pattern can be found in the official OpenCV [repository](https://gith
       - However, the pattern should take up at least 25 percent of the space in the image.
       - Otherwise, detection will be bad, and might affect the result of the calibration.
 
-  You can either save the image by pressing "s" or skip (do not save) the image by pressing "c".
+  You can either save the image by pressing `s` or skip (do not save) the image by pressing `c`.
     
-  Once you have collected enough samples, press "n" to continue to the next step of calibration process.
+  Once you have collected enough samples, press `n` to continue to the next step of calibration process.
     - Recommended number of collected samples is around 15 different images.
 
   An example of the board detection is shown below:
