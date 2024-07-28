@@ -2,7 +2,7 @@
 
 Contains source code and implementation files.
 
-**Requarnments**:
+**Requirements**:
 - Linux operating system
     - tested on Ubuntu 22.04 LTS
 - [eXtream Gradient Boost](https://github.com/dmlc/xgboost)
@@ -12,6 +12,7 @@ Contains source code and implementation files.
     - [yolov4.weights](https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4.weights)
     - [yolov4.cfg](https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov4.cfg)
 
+To automatically install all the above requirements, please use the [install.sh](/Implementation/install.sh) script. 
 ## Structure
 ```
 .
