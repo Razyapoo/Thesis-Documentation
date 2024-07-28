@@ -1,6 +1,11 @@
-# Camera Intrinsic Calibration
+# ESP32 UWB
 
 Contains the implementation of the Asymmetric Double-Sided Two-Way Ranging protocol.
+
+# Requirements
+
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [DW1000 lib](https://github.com/Makerfabs/Makerfabs-ESP32-UWB/blob/main/mf_DW1000.zip)
 
 # How to upload the firmware
 
@@ -10,7 +15,7 @@ The code for both anchors and tags is uploaded in the same way:
 
 - Download and install the Arduino IDE:
     - Download the Arduino IDE from the official Arduino [website](https://www.arduino.cc/en/software).
-    - It is recommended to install 1.8.18 version, as this version was used during the project's development.
+    - It is recommended to install 1.8.18 version, as this version was used during the project's development. A newer version of 2.x is not guaranteed to work.
     - Follow the installation instructions from the [tutorial](https://docs.arduino.cc/software/ide-v1/tutorials/Linux/).
 
 ## Install the ESP32 Board package

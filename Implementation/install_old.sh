@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Notify the user that the script requires sudo
-if [[ $EUID -ne 0 ]]; then
-   echo "This script requires sudo privileges. Please run with sudo."
-   exit 1
-fi
-
 # Create directories and set path variables
 mkdir -p libs
 cd libs

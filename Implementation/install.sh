@@ -9,12 +9,6 @@ while true; do
     esac
 done
 
-# Notify the user that the script requires sudo
-if [[ $EUID -ne 0 ]]; then
-   echo "This script requires sudo privileges for apt install. Please run with sudo."
-   exit 1
-fi
-
 # Update and install basic dependencies
 sudo apt-get install -y build-essential cmake g++ wget unzip git ninja-build \
     pkg-config libgtk-3-dev libeigen3-dev \
@@ -43,7 +37,7 @@ git clone --recursive https://github.com/dmlc/xgboost
 cd xgboost
 mkdir build && cd build
 cmake ..
-cmake --build .
+make -j4
 cd ../..
 XGBOOST_INSTALL_PATH=/opt/xgboost
 sudo mkdir -p $XGBOOST_INSTALL_PATH
@@ -67,7 +61,7 @@ cd ..
 
 {
   echo "# Qt"
-  echo "export CMAKE_PREFIX_PATH=$QT_INSTALL_PATH/6.7.2/gcc_64/lib/cmake:\$CMAKE_PREFIX_PATH"
+  echo "export CMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt6:\$CMAKE_PREFIX_PATH"
   echo "# XGBoost"
   echo "export XGBOOST_INCLUDE_PATH=$XGBOOST_INSTALL_PATH/include"
   echo "export XGBOOST_LIB_PATH=$XGBOOST_INSTALL_PATH/lib"

@@ -6,43 +6,48 @@ This is a Main GUI, which allows to:
 - Data visualization (distances, coordinates)
 - Data export
 
+The main components of the program are:
+   - *GUI visualization*: responsible for data visualization
+   - *Data Processor*: responsible for loading the UWB, Optical, PixelToReal data and working with them 
+   - *Video Processor*: responsible for working with video stream (read, play, pause, seek, etc.)
+
+Each component is performed simultaneously in a dedicated thread for better optimization.
+
 **Requarnments**:
 - Linux operating system
-    - tested on Ubuntu 22.04 LTS
-    - Monitor resolution: 1920x1080 or more.
+   - tested on Ubuntu 22.04 LTS
+   - Monitor resolution: 1920x1080 or more.
 - [eXtream Gradient Boost](https://github.com/dmlc/xgboost)
-- [OpenCV v4.7.0](https://opencv.org/)
-- [Qt6 Framework v6.6.1](https://www.qt.io/product/framework)
-- [YoloV4](https://github.com/AlexeyAB/darknet)
+- [OpenCV v4.7.0](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html)
+- [Qt6 Framework v6.6.1](https://www.qt.io/download-qt-installer-oss?hsCtaTracking=99d9dd4f-5681-48d2-b096-470725510d34%7C074ddad0-fdef-4e53-8aa8-5e8a876d6ab4)
+- [YoloV4](https://github.com/AlexeyAB/darknet) (we need only .weights and .cfg files)
+    - [yolov4.weights](https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4.weights)
+    - [yolov4.cfg](https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov4.cfg)
 
 ## Installation
 
 To install the Main GUI application either use the [install.sh](/Implementation/install.sh) to automatically install all the requirement dependencies, or follow these steps:
 
-1. **Install the required dependencies:**
-   - Create a temporary folder where all dependencies will be installed:
+1. **Install the required dependencies:** 
+  - Install basic dependencies (optional):
       ```sh
-      mkdir -p libs
-      cd libs
-      ```
-   - Install basic dependencies:
-      ```sh
-      sudo apt-get update
-      sudo apt-get install -y build-essential cmake g++ wget unzip git libeigen3-dev \
-         pkg-config libgtk-3-dev \
+      sudo apt-get update && upgrade
+      sudo apt-get install -y build-essential cmake g++ wget unzip git ninja-build \
+         pkg-config libgtk-3-dev libeigen3-dev \
          libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
          libxvidcore-dev libx264-dev libjpeg-dev libpng-dev libtiff-dev \
-         gfortran openexr libatlas-base-dev python3-dev python3-numpy \
+         openexr libatlas-base-dev \
          libtbb2 libtbb-dev libxcb-xinerama0 libxcb-cursor0
       ```
    - **Install Qt6 Framework:**
       ```sh
-      wget https://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run
-      sudo chmod +x qt-unified-linux-x64-online.run
-      sudo ./qt-unified-linux-x64-online.run --root ./Qt --accept-licenses --default-answer --confirm-command install qt6.7.2-full # assuming that the folder "libs" is the current folder
-      sudo mkdir -p /opt/Qt
-      sudo mv Qt/* /opt/Qt # make available everywhere
-      export CMAKE_PREFIX_PATH=/opt/Qt/6.7.2/gcc_64/lib/cmake:$CMAKE_PREFIX_PATH # set environment variables
+      sudo apt install -y qt6-base-dev qt6-base-private-dev qt6-declarative-dev \
+         qt6-declarative-private-dev qt6-tools-dev qt6-tools-private-dev qt6-scxml-dev \
+         qt6-documentation-tools libqt6core5compat6-dev qt6-tools-dev-tools qt6-l10n-tools \
+         qt6-shader-baker libqt6shadertools6-dev qt6-quick3d-dev qt6-quick3d-dev-tools \
+         libqt6svg6-dev libqt6quicktimeline6-dev libqt6serialport6-dev libqt6charts6-dev qt6-multimedia-dev 
+      
+      export export CMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt6:$CMAKE_PREFIX_PATH
       ```
 
    - **Install XGBoost:**
@@ -51,57 +56,45 @@ To install the Main GUI application either use the [install.sh](/Implementation/
       cd xgboost
       mkdir build && cd build
       cmake ..
-      cmake --build .
+      make -j4
       cd ../..
-      sudo mkdir -p /opt/xgboost
-      sudo mv xgboost/* /opt/xgboost # make available everywhere
-      export XGBOOST_INCLUDE_PATH=/opt/xgboost/include # set environment variables
-      export XGBOOST_LIB_PATH=/opt/xgboost/lib
+      XGBOOST_INSTALL_PATH=/opt/xgboost
+      sudo mkdir -p $XGBOOST_INSTALL_PATH
+      sudo mv xgboost/* $XGBOOST_INSTALL_PATH
+      rm xgboost
+      sudo ln -s /opt/xgboost/lib/libxgboost.so /opt/xgboost/lib/libxgboost.so.0
+      export XGBOOST_INCLUDE_PATH=$XGBOOST_INSTALL_PATH/include
+      export XGBOOST_LIB_PATH=$XGBOOST_INSTALL_PATH/lib
       ```
 
    - **Install OpenCV:**
       ```sh
-      wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip
-      wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.x.zip
-      unzip opencv.zip
-      unzip opencv_contrib.zip
-      mkdir -p opencv4 && cd opencv4
-      cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.x/modules ../opencv-4.x
-      make -j4
-      sudo make install
-      sudo ldconfig
-      cd ..
-      rm -rf opencv-4.x opencv_contrib-4.x opencv.zip opencv_contrib.zip
-      sudo mkdir -p /opt/opencv4
-      sudo mv opencv4/* /opt/opencv4
-      export OPENCV_INCLUDE_PATH=/usr/local/include/opencv4 # set environment variables
-      export OPENCV_LIB_PATH=/opt/opencv4/lib
-      export OpenCV_DIR=/opt/opencv4
+      sudo apt install -y libopencv-contrib-dev libopencv-dev libopencv-core-dev libopencv-dnn-dev
       ```
 
    - **Download YoloV4 configuration files:**
       ```sh
-      wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.weights
-      wget https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov4-tiny.cfg
+      wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4.weights
+      wget https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov4.cfg
       ```
 
    - **Set other environment variables**
       ```sh
-      export LD_LIBRARY_PATH=$OPENCV_LIB_PATH:$XGBOOST_LIB_PATH:$LD_LIBRARY_PATH
-      export CPATH=$OPENCV_INCLUDE_PATH:$XGBOOST_INCLUDE_PATH:$CPATH
-      export LIBRARY_PATH=$OPENCV_LIB_PATH:$XGBOOST_LIB_PATH:$LIBRARY_PATH
+      export LD_LIBRARY_PATH=$XGBOOST_LIB_PATH:$LD_LIBRARY_PATH
+      export CPATH=$XGBOOST_INCLUDE_PATH:$CPATH
+      export LIBRARY_PATH=$XGBOOST_LIB_PATH:$LIBRARY_PATH
       ```
    - **Make environment variables permanent**
       - To make all the above environment variables permanent:
          - write all exports into the ~/.bashrc 
          - run `source ~/.bashrc`
 
-4. **Build and run the application:**
+2. **Build and run the application:**
 ```sh
     # Assuming we are in IndoorPositioningSystem/ folder
     mkdir build && cd build
     cmake ..
-    make
+    make -j4
     # Run the application
     ./IndoorPositioningSystem
    ```
