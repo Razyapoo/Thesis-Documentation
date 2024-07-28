@@ -16,7 +16,7 @@
 
 ## Documentation
 
-The installation manual is available in README.md in each folder of this repository. The application usage is detailed in [Wiki]().
+The entire application (system) consists of several separate parts each located in its own folder within this repository. Each part has its own installation guide available in the README.md file found in its respective folder. Detailed instructions on how to use the sepcigic part of the application can be found in the [Wiki]().
   
 ## Workflow of the system
 
