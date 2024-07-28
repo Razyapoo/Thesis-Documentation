@@ -50,17 +50,19 @@ Chessboard pattern can be found in the official OpenCV [repository](https://gith
 ### Detection of corners
 
   If the Chessboard is successfully detected, the detection will be shown in the image window (cv::imshow).
-  
+
   > [!Tip]
   > Rotate and tilt the pattern in different dimensions to make diverse collection.
   > It is recommended to move the pattern closer and further away from the camera. 
   > The pattern should take at least 25 percent of the space in the image.
   > Otherwise, detection will be bad, and might affect the result of the calibration.
 
-  You can either save the image by pressing `s` or skip (do not save) the image by pressing `c`.
+  - You can either save the image by pressing `s` or skip (do not save) the image by pressing `c`.
     
-  Once you have collected enough samples, press `n` to continue to the next step of calibration process.
-    - Recommended number of collected samples is around 15 different images.
+  - Once you have collected enough samples, press `n` to continue to the next step of calibration process.
+  
+  > [!Tip] 
+  > Recommended number of collected samples is around 15 different images.
 
   An example of the board detection is shown below:
 
