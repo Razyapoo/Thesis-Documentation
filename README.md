@@ -16,7 +16,7 @@
 
 ## Documentation
 
-The entire application (system) consists of several separate parts each located in its own folder within this repository. Each part has its own installation guide available in the README.md file found in its respective folder. Detailed instructions on how to use the sepcigic part of the application can be found in the [Wiki]().
+The entire application (system) consists of several separate parts (smaller applications) each located in its own folder within this repository. Each part has its own installation guide available in the README.md file found in its respective folder. Detailed instructions on how to use the sepcific part of the application can be found in the [Wiki]().
   
 ## Workflow of the system
 
@@ -24,19 +24,19 @@ The entire application (system) consists of several separate parts each located 
     1. Video and UWB data are collected using the [Server](./Server/).
         - The server [records](./Implementation/Server/VideoManager.h) video data and [communicates](./Implementation/Server/Server.h) with [ESP32 UWB devices](./ESP32%20UWB/), collecting data from both sources.
         - After the data is collected, they should be formatted for opening in GUI, as described in [Recorded Experiments](../Recorded%20Experiments/).
-    2. After correction, the collected data should be opened in [Indoor Positioning System (GUI)](./Implementation/IndoorPositioningSystem/).
+    2. After correction, the collected data can be opened in [Indoor Positioning System (GUI)](./Implementation/IndoorPositioningSystem/).
 
 - **Camera calibration for Optical method**
 
     1. The camera calibration (calculation of intrinsic camera parameters) is performed using [Calibrator](./Implementation/Camera%20Intrinsic%20Calibration%20(Optical)/Calibrator/).
 
-    2. After calibration, the parameters should be opened in [Indoor Positioning System (GUI)](./Implementation/IndoorPositioningSystem/) to enable the people localization using Optical method
+    2. After calibration, the parameters can be opened in [Indoor Positioning System (GUI)](./Implementation/IndoorPositioningSystem/) to enable the people localization using Optical method
 
 - **Pixel-to-Real model training**
     
     1. The model capable of localizing people is trained using [`train_PixeltoReal_model.py`](./Implementation/PixelToReal/train_PixeltoReal_model.py)
 
-    2. After the model is trained, it should be opened in [Indoor Positioning System (GUI)](./Implementation/IndoorPositioningSystem/) to enable the people localization using PixelToReal model
+    2. After the model is trained, it can be opened in [Indoor Positioning System (GUI)](./Implementation/IndoorPositioningSystem/) to enable the people localization using PixelToReal model
 
 ## Project structure
 ```
