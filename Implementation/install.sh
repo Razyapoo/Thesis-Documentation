@@ -66,9 +66,9 @@ cd ..
   echo "export XGBOOST_INCLUDE_PATH=$XGBOOST_INSTALL_PATH/include"
   echo "export XGBOOST_LIB_PATH=$XGBOOST_INSTALL_PATH/lib"
   echo "# Library Paths"
-  echo "export LD_LIBRARY_PATH=\$XGBOOST_LIB_PATH:\$LD_LIBRARY_PATH"
-  echo "export CPATH=\$XGBOOST_INCLUDE_PATH:\$CPATH"
-  echo "export LIBRARY_PATH=\$XGBOOST_LIB_PATH:\$LIBRARY_PATH"
+  echo "export LD_LIBRARY_PATH=\$XGBOOST_LIB_PATH:$LD_LIBRARY_PATH"
+  echo "export CPATH=\$XGBOOST_INCLUDE_PATH:$CPATH"
+  echo "export LIBRARY_PATH=\$XGBOOST_LIB_PATH:$LIBRARY_PATH"
 } >> $HOME/.bashrc
 
 source $HOME/.bashrc

@@ -13,6 +13,7 @@ Contains source code and implementation files.
     - [yolov4.cfg](https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov4.cfg)
 
 To automatically install all the above requirements, please use the [install.sh](/Implementation/install.sh) script. 
+
 ## Structure
 ```
 .
