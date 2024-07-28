@@ -5,7 +5,7 @@
 **Email:** oskarrazyapov@gmail.com  
 
 ## Abstract
-> purpose of the project and its overview 
+> purpose of the project and its overview (will be added)
 
 
 **Keywords:** Repeatable Experiments, CCTV Cameras, Localization, Ultra-Wide band, Machine learning
@@ -16,27 +16,27 @@
 
 ## Documentation
 
-For detailed documentation, including the installation process and application usage, please refer to our [Wiki]().
+The installation manual is available in README.md in each folder of this repository. The application usage is detailed in [Wiki]().
   
 ## Workflow of the system
 
-A detailed workflow how to use the system. More detailed workflow of each part is detailed in the decription of their corresponding folders.
+- **Working with video and UWB**
+    1. Video and UWB data are collected using the [Server](./Server/).
+        - The server [records](./Implementation/Server/VideoManager.h) video data and [communicates](./Implementation/Server/Server.h) with [ESP32 UWB devices](./ESP32%20UWB/), collecting data from both sources.
+        - After the data is collected, they should be formatted for opening in GUI, as described in [Recorded Experiments](../Recorded%20Experiments/).
+    2. After correction, the collected data should be opened in [Indoor Positioning System (GUI)](./Implementation/IndoorPositioningSystem/).
 
-### Working with video and UWB 
+- **Camera calibration for Optical method**
 
-- Video and UWB data are collected using the [Server](./Server/).
-    - The server [records](./Implementation/Server/VideoManager.h) video data and [communicates](./Implementation/Server/Server.h) with [ESP32 UWB devices](./ESP32%20UWB/), collecting data from both sources.
-    - After the data is collected, they should be formatted for opening in GUI, as described in [Recorded Experiments](../Recorded%20Experiments/).
-- After correction, the collected data should be opened in [Indoor Positioning System (GUI)](./Implementation/IndoorPositioningSystem/).
+    1. The camera calibration (calculation of intrinsic camera parameters) is performed using [Calibrator](./Implementation/Camera%20Intrinsic%20Calibration%20(Optical)/Calibrator/).
 
-### Camera calibration for Optical method
-- Optical method requires to know the intrinsic camera parameters in order to compute the people's coordinates.
-- The camera calibration is performed using [Calibrator](./Implementation/Camera%20Intrinsic%20Calibration%20(Optical)/Calibrator/).
+    2. After calibration, the parameters should be opened in [Indoor Positioning System (GUI)](./Implementation/IndoorPositioningSystem/) to enable the people localization using Optical method
 
-### Pixel-to-Real model training
-- The model capable of localizing people is trained using [`train_PixeltoReal_model.py`](./Implementation/PixelToReal/train_PixeltoReal_model.py)
+- **Pixel-to-Real model training**
+    
+    1. The model capable of localizing people is trained using [`train_PixeltoReal_model.py`](./Implementation/PixelToReal/train_PixeltoReal_model.py)
 
-
+    2. After the model is trained, it should be opened in [Indoor Positioning System (GUI)](./Implementation/IndoorPositioningSystem/) to enable the people localization using PixelToReal model
 
 ## Project structure
 ```
